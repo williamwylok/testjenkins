@@ -13,9 +13,9 @@ node {
 
     echo "job name = ${env.JOB_NAME}"
 
-    if (${env.myswitch} == 'one') {
+    if ("${env.myswitch}" == 'one') {
         load 'Project1/Jenkinsfile'
-    } else if (${env.myswitch} == 'two') {
+    } else if ("${env.myswitch}" == 'two') {
         load 'Project2/Jenkinsfile'
     }
 }
