@@ -2,9 +2,8 @@
 
 node {
     
-    environment {
-        myswitch = "one"
-    }
+    env.myswitch = "one"
+    
     stage('Shared') {
         echo 'Shared stage'
 
@@ -13,10 +12,12 @@ node {
 
     echo "job name = ${env.JOB_NAME}"
     echo "myswitch = ${env.myswitch}"
-    
+ 
+    /*
     stage('Dedicated') {
         load 'Project1/Jenkinsfile'
     }
+    */
     
     if ("${env.myswitch}" == 'one') {
         load 'Project1/Jenkinsfile'
