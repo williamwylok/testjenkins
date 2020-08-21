@@ -7,7 +7,7 @@ node {
         checkout scm
     }
 
-    currentBuild.displayName = "Project1"
+    echo "job name = ${env.JOB_NAME}"
 
     if (env.JOB_NAME == 'Project1') {
         load 'Project1/Jenkinsfile'
