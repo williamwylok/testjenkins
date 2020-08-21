@@ -2,7 +2,7 @@
 
 node {
     
-    env.myswitch = "one"
+    env.myswitch = "two"
     
     stage('Shared') {
         echo 'Shared stage'
