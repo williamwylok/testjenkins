@@ -1,6 +1,10 @@
 #!groovy
 
 node {
+    
+    environment {
+        myswitch = "one"
+    }
     stage('Shared') {
         echo 'Shared stage'
 
@@ -9,9 +13,9 @@ node {
 
     echo "job name = ${env.JOB_NAME}"
 
-    if (env.JOB_NAME == 'Project1') {
+    if (${env.myswitch} == 'one') {
         load 'Project1/Jenkinsfile'
-    } else if (env.JOB_NAME == 'Project2') {
+    } else if (${env.myswitch} == 'two') {
         load 'Project2/Jenkinsfile'
     }
 }
